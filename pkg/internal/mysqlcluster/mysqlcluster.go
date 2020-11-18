@@ -265,3 +265,12 @@ func (c *MysqlCluster) GetNamespacedName() types.NamespacedName {
 		Name:      c.Name,
 	}
 }
+
+// IsMysqlClusterKind for the given kind checks if CRD kind is for MysqlCluster CRD
+func IsMysqlClusterKind(kind string) bool {
+	switch kind {
+	case "MysqlCluster", "mysqlcluster", "mysqlclusters":
+		return true
+	}
+	return false
+}
